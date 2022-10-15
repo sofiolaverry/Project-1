@@ -57,20 +57,21 @@ const options = ["rock","paper","scissors"];
 function computerPlay(){
     const selection = Math.floor(Math.random() * options.length);
     const computerSelection = options[selection]; 
-    console.log(computerSelection);
+    console.log("Computer: " + computerSelection);
     return computerSelection
 }
 
 function userPlay(){
     const playerSelection = prompt("Type your choice").toLowerCase();
-    console.log(playerSelection);
+    console.log("Player: " + playerSelection);
     return playerSelection
 }
 
 function round(computerSelection, playerSelection){   
 
-    let userWins = 0;
-    let computerWins = 0;
+    var userWins = 0;
+    var computerWins = 0;
+
 //user chooses rock
     if(playerSelection === "rock" && computerSelection === "paper") {
         console.log ('You lose! Paper beats rock!'); 
@@ -96,21 +97,48 @@ function round(computerSelection, playerSelection){
     } else if (playerSelection === "scissors" && computerSelection === "paper") {
         console.log ("You win! Scissors beats paper!");
         userWins =+ 1;      
-    } else  { 
-        console.log ("It is a tie!");  
-    } 
-    
-    console.log(userWins);
-    console.log(computerWins);
-    
+    } else if(playerSelection !== "scissors" | "paper" | "rock" ) { 
+        console.log ("The value must be rock, paper or scissors");  
+    } else{
+        console.log ("It is a tie!"); 
+    }
+      
+    console.log("User " + userWins);
+    console.log("Computer " + computerWins);
+
+    return userWins, computerWins
+
 }
 
 
 
 function game(){
+    console.log("ꕥ Welcome to rock, paper or scissors ꕥ")
+    console.log("____________________________________")
     for(let i = 0; i < 5; i++){
+        console.log("ꕥꕥꕥꕥꕥꕥꕥꕥꕥꕥꕥꕥꕥꕥꕥꕥꕥꕥꕥꕥꕥꕥꕥꕥ")
+        console.log("Round number: " + (i + 1));
         round(computerPlay(), userPlay());
-      
+        // var computerWins = round().valueOf.computerWins;
+        // var userWins = round().valueOf.userWins;
+
+        // console.log("User wins inside loop " + userWins);
+        // console.log("Computer wins inside loop  " + computerWins);
+    
+
+        // var counterU = 0;
+        // var counterC = 0;
+
+        // if(userWins > computerWins){
+        //     counterU++;
+        // } else if (userWins < computerWins){
+        //     counterC++;
+        // }
+        // if(counterU > counterC){
+        //     console.log("The user wins with: "+ counterU);
+        // } else{
+        //     console.log("The computer wins with: "+ counterC);
+        // }
     }
 }
 
