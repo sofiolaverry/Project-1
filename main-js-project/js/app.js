@@ -1,7 +1,10 @@
-const computerSelectionDisplay = document.getElementById('computer-selection')
-const userSelectionDisplay = document.getElementById('user-selection')
-const resultDisplay = document.getElementById('result')
-const options = document.querySelectorAll('button')
+const computerSelectionDisplay = document.getElementById("computer-selection")
+const userSelectionDisplay = document.getElementById("user-selection")
+const resultDisplay = document.getElementById("result")
+const winnerDisplay = document.getElementById("winner")
+const options = document.querySelectorAll("button")
+const uscore = document.getElementById("uscore")
+const cscore = document.getElementById("cscore")
 let userSelection
 let result
 let computerSelection
@@ -14,15 +17,12 @@ const possibleOptions = ["rock","paper","scissors"];
 //assigns it to the variable userSelection
 options.forEach(option => option.addEventListener('click', (e) => { 
     userSelection = e.target.id
-    userSelectionDisplay.innerHTML = userSelection
     generateComputerSelection()
     getResult()
-    winner()
 }))
 
 function generateComputerSelection(){
     computerSelection = possibleOptions[Math.floor(Math.random() * possibleOptions.length)]; 
-    computerSelectionDisplay.innerHTML = computerSelection
 }
 
 function getResult(){
@@ -47,14 +47,16 @@ function getResult(){
             resultDisplay.innerHTML = "It's a draw!"
             break
     }
-}
 
-function winner(){
+    uscore.innerHTML = userCounter.toString()
+    cscore.innerHTML = computerCounter.toString()
+
     if (userCounter >= 5){
-        resultDisplay.innerHTML = "The user won with " + userCounter + " points "
+        winnerDisplay.innerHTML = "You won the round!" 
     } 
     if (computerCounter >= 5){
-        resultDisplay.innerHTML = "The computer won with " + userCounter + " points "
+        winnerDisplay.innerHTML = "The computer won the round!"
     }
 }
+
  
