@@ -6,7 +6,7 @@
   body {
     padding: 0;
     margin: 0;
-    background-image: url("../calculator/images/pastel\ japan.png");
+    background-image: url("../calculator/images/airplane.png");
     background-repeat: no-repeat;
     background-size: cover;
   }
@@ -23,9 +23,11 @@
   .calculator-grid > button {
     cursor: pointer;
     font-size: 2rem;
-    border: 1px solid white;
+    border: 1px solid #d83131;
+    border-radius: 20px;
     outline: none;
     background-color: rgba(255, 255, 255, .6);
+    margin: 5px;
   }
   
   .calculator-grid > button:hover {
@@ -38,7 +40,7 @@
   
   .output {
     grid-column: 1 / -1;
-    background-color: rgba(0, 0, 0, .75);
+    background-color: rgb(216,49,49, .75);
     display: flex;
     align-items: flex-end;
     justify-content: space-around;
@@ -46,6 +48,7 @@
     padding: 10px;
     word-wrap: break-word;
     word-break: break-all;
+    border-radius: 20px;
   }
   
   .output .previous-operand {
