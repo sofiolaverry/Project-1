@@ -53,9 +53,13 @@ function getResult(){
 
     if (userCounter >= 5){
         winnerDisplay.innerHTML = "You won the round!" 
+        userCounter = 0
+        computerCounter = 0
     } 
     if (computerCounter >= 5){
         winnerDisplay.innerHTML = "The computer won the round!"
+        userCounter = 0
+        computerCounter = 0
     }
 }
 
